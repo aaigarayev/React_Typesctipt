@@ -1,0 +1,15 @@
+{
+  "name": "react-fr-masters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alimzhan Aigarayev",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^1.15.3"
+  }
+}
