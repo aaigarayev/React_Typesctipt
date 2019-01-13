@@ -11,7 +11,10 @@
   },
   "author": "Alimzhan Aigarayev",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
   "devDependencies": {
     "eslint": "^5.12.0",
     "eslint-config-prettier": "^3.3.0",
