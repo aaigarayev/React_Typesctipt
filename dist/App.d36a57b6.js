@@ -25043,19 +25043,23 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Adopt me!"), _react.default.createElement(_Pet.Pet, {
-        name: "Luna",
-        animal: "dog",
-        breed: "Havanese"
-      }), _react.default.createElement(_Pet.Pet, {
-        name: "Pepper",
-        animal: "bird",
-        breed: "Cockatiel"
-      }), _react.default.createElement(_Pet.Pet, {
-        name: "Doink",
-        animal: "cat",
-        breed: "Mixed"
-      }));
+      // Render out to the DOM all of the state got from API
+      // <pre><code>{JSON.stringify(this.state, null, 4)}</code></pre>
+      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("h1", null, "Adopt me!"), _react.default.createElement("div", null, this.state.pets.map(function (pet) {
+        var breed;
+
+        if (Array.isArray(pet.breeds.breed)) {
+          breed = pet.breeds.breed.join(", ");
+        } else {
+          breed = pet.breeds.breed;
+        }
+
+        return _react.default.createElement(_Pet.Pet, {
+          animal: pet.animal,
+          name: pet.name,
+          breed: breed
+        });
+      })));
     }
   }]);
 
@@ -25090,7 +25094,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49819" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50230" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

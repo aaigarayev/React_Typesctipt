@@ -39,12 +39,23 @@ class App extends React.Component {
   }
 
   render() {
+    // Render out to the DOM all of the state got from API
+    // <pre><code>{JSON.stringify(this.state, null, 4)}</code></pre>
     return (
       <React.Fragment>
         <h1>Adopt me!</h1>
-        <Pet name="Luna" animal="dog" breed="Havanese" />
-        <Pet name="Pepper" animal="bird" breed="Cockatiel" />
-        <Pet name="Doink" animal="cat" breed="Mixed" />
+        <div>
+          {this.state.pets.map(pet => {
+            let breed;
+
+            if (Array.isArray(pet.breeds.breed)) {
+              breed = pet.breeds.breed.join(", ");
+            } else {
+              breed = pet.breeds.breed;
+            }
+            return <Pet animal={pet.animal} name={pet.name} breed={breed} />;
+          })}
+        </div>
       </React.Fragment>
     );
   }
