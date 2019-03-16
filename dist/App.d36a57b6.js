@@ -29102,7 +29102,12 @@ function (_React$Component) {
     value: function render() {
       return _react.default.createElement("div", null, _react.default.createElement("header", null, _react.default.createElement(_router.Link, {
         to: "/"
-      }, "Adopt me!")), _react.default.createElement(_SearchContext.Provider, {
+      }, "Adopt me!"), _react.default.createElement(_router.Link, {
+        to: "/search-params"
+      }, _react.default.createElement("span", {
+        "aria-label": "search",
+        role: "img"
+      }, "\uD83D\uDD0D"))), _react.default.createElement(_SearchContext.Provider, {
         value: this.state
       }, _react.default.createElement(_router.Router, null, _react.default.createElement(_Results.default, {
         path: "/"
